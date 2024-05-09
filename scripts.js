@@ -32,5 +32,12 @@ form.addEventListener("submit", (event) => {
 
     const resultValue = Math.floor(dividendNumber / dividerNumber);
     result.innerText = resultValue.toString();
+
+  } catch (error) {
+    console.error("An error occured:", error);
+    console.error("Call stack:", error.stack);
+
+    // Critical Error Handling
+    result.innerText = "Invalid input: Division by zero or non-numeric value provided.";
   }
 });
