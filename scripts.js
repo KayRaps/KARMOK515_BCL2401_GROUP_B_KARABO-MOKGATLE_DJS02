@@ -26,7 +26,7 @@ form.addEventListener("submit", (event) => {
     const dividendNumber = Number(dividend);
     const dividerNumber = Number(divider);
 
-    if (isNaN(dividendNumber) || isNaN(dividerNumber) || isNaN(dividerNumber) === 0) {
+    if (isNaN(dividendNumber) || isNaN(dividerNumber) === 0) {
       result.innerText = "Invalid input: Division by zero or non-numeric value provided";
     }
 
