@@ -5,7 +5,6 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
-  result.innerText = dividend / divider;
 
   // Error handling: checking if inputs are empty
   if (!dividend || !divider) {
@@ -13,10 +12,16 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Error handling: checking for division by zero before number conversion
+  if (divider === "0") {
+    result.innerText = "Invalid input: Division by zero or non-numeric value provided.";
+    return;
+  }
+
   // Error handling: checking if inputs contain invalid characters
   const validInputRegex = /^[0-9]+$/;
   if (!validInputRegex.test(dividend) || !validInputRegex.test(divider)) {
-    result.classList.add("critical-error")
+    result.classList.add("critical-error");
     result.innerText = "Something critical went wrong. Please reload the page.";
     return;
   }
@@ -25,10 +30,6 @@ form.addEventListener("submit", (event) => {
     // Forcing number conversion
     const dividendNumber = Number(dividend);
     const dividerNumber = Number(divider);
-
-    if (isNaN(dividendNumber) || isNaN(dividerNumber) === 0) {
-      result.innerText = "Invalid input: Division by zero or non-numeric value provided";
-    }
 
     const resultValue = Math.floor(dividendNumber / dividerNumber);
     result.innerText = resultValue.toString();
