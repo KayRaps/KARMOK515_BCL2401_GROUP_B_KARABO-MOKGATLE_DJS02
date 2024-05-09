@@ -30,3 +30,5 @@ An error message is displayed by the application if:
 The field labeled as dividend or divider remains unfilled.
 Other characters than numbers (0–9) are present in the input.
 A division by zero is attempted by the user.
+
+This code demonstrates a well-structured approach to handling form submissions for division calculations. It includes basic and advanced error handling to ensure user input validity and prevent unexpected behavior.
