@@ -26,7 +26,9 @@ form.addEventListener("submit", (event) => {
     const dividendNumber = Number(dividend);
     const dividerNumber = Number(divider);
 
-    
+    if (isNaN(dividendNumber) || isNaN(dividerNumber) || dividerNumber === 0) {
+      
+    }
   }
 
 });
