@@ -20,4 +20,13 @@ form.addEventListener("submit", (event) => {
     result.innerText = "Something critical went wrong. Please reload the page.";
     return;
   }
+
+  try {
+    // Forcing number conversion
+    const dividendNumber = Number(dividend);
+    const dividerNumber = Number(divider);
+
+    
+  }
+
 });
